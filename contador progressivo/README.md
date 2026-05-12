@@ -31,15 +31,13 @@ Para rodar este programa, você precisará do:
 
 ## Exemplo de Uso
 
-  -  Digite o número que deseja iniciar a contagem: 2
-  -  Digite o número que deseja terminar a contagem: 10
+1. Digite o número que deseja iniciar a contagem: 2
+2. Digite o número que deseja terminar a contagem: 10
+3. Deseja definir o valor que será somado ao contator de controle?
+4. Digite (S) para sim ou (N) para não: S
+5. Digite o valor do incremento: 2
 
-Deseja definir o valor que será somado ao contator de controle?
-Digite (S) para sim ou (N) para não: S
-
-Digite o valor do incremento: 2
-
-Contagem: 2 4 6 8 10 
+R. Contagem: 2 4 6 8 10 
 
 ## Estrutura do Código
 O código utiliza as seguintes estruturas lógicas:

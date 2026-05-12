@@ -36,8 +36,7 @@ Para rodar este programa, você precisará do:
 3. Deseja definir o valor que será somado ao contator de controle?
 4. Digite (S) para sim ou (N) para não: S
 5. Digite o valor do incremento: 2
-
-R. Contagem: 2 4 6 8 10 
+6. Contagem: 2 4 6 8 10 
 
 ## Estrutura do Código
 O código utiliza as seguintes estruturas lógicas:

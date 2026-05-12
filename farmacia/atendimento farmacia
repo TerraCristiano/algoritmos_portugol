@@ -1,1 +1,231 @@
+programa {
+  funcao inicio() {
+
+    // DECLARAÇÃO DE VARIÁVEIS    
+
+    cadeia verifica_cpf, verifica_controlado, verifica_remedio, verifica_estoque, verifica_parcial, cpf, pagamento
+    cadeia verifica_compra, verifica_nota
+
+    //RECEPÇÃO AO CLIENTE
+
+    escreva("Cliente chegou na loja! Seja bem vindo!")
+
+    //VERIFICA SE É REMÉDIO CONTROLADO
+
+    escreva("\nTrata-se de remédio controlado? Digite (S) para sim e (N) para não: ")
+    leia(verifica_controlado)
+
+    se(verifica_controlado == "S" ou verifica_controlado == "s") {
+      escreva("Pode informar o número do CPF e fornecer uma cópia? Digite (S) para sim e (N) para não: ")
+      leia(verifica_cpf)
+
+      //SOLICITA O NÚMERO DO CPF
+
+      se(verifica_cpf == "S" ou verifica_cpf == "s"){
+        escreva("Digite o número do CPF: ")
+        leia(cpf)
+
+        //VERIFICA SE HÁ REMÉDIO NA PRATELEIRA
+
+        escreva("Há remédios na prateleira? Digite (S) para sim e (N) para não: ")
+        leia(verifica_remedio)
+
+        // VERIFICA SE TEM TODOS OS REMÉDIOS DA RECEITA EM ESTOQUE
+
+        se(verifica_remedio == "S" ou verifica_remedio == "s") {
+          escreva("Temos todos os medicamentos da receita? Digite (S) para sim e (N) para não: ")
+          leia(verifica_estoque)
+
+        se(verifica_estoque == "S" ou verifica_estoque == "s"){
+          escreva("\nAqui estão as instruções de uso.")
+          escreva("\nFavor realizar o pagamento do caixa!")
+
+        }senao {
+          escreva("Temos os medicamentos em estoque? Digite (1) para todos, (2) para parcial ou (3) para nenhum: ")
+          leia(verifica_parcial)
+
+          se(verifica_parcial == "1") {
+            escreva("\nAqui estão as instruções de uso.")
+            escreva("\nFavor realizar o pagamento do caixa!")            
+          }senao se(verifica_parcial == "2") {
+            escreva("Aceita levar apenas parte dos medicamentos? Digite (S) para sim e (N) para não: ")
+            leia(verifica_compra)
+
+            se(verifica_compra == "S" ou verifica_compra == "s") {
+              escreva("\nAqui estão as instruções de uso.")
+              escreva("\nFavor realizar o pagamento do caixa!")                
+            }senao {
+              escreva("\nInfelizmente não posso prosseguir sem o CPF ou sem a cópia da receita!")
+              escreva("\nAtendimento encerrado!")
+              retorne            
+            }
+          }senao se(verifica_parcial == "3") {
+            escreva("\nInfelizmente não posso prosseguir sem o CPF ou sem a cópia da receita!")
+            escreva("\nAtendimento encerrado!")
+            retorne
+          }
+        }
+      }
+
+      //VERIFICA SE O CLIENTE QUER CPF EM NOTA
+      escreva("Deseja coloca o CPF em nota? Digite (S) para sim e (N) para não: ")
+      leia(verifica_nota)
+
+      //VERIFICA A FORMA DE PAGAMENTO E IMPRIME A NOTA
+
+      se(verifica_nota == "S" ou verifica_nota == "s") {
+        escreva("Qual seria a forma de pagamento? (1) Cartão,  (2) Dinheiro, (3) Outros: ")
+        leia(pagamento)
+        se(pagamento == "1") {
+          escreva("\Aqui estão os medicamentos.")
+          escreva("\nAbaixo os dados na NF:")
+          escreva("\nCPF: ",cpf)
+          escreva("\nForma de pagamento: Cartão.")
+          escreva("\nValor total: xxx.")
+        } 
+          senao se (pagamento == "2") {
+          escreva("\Aqui estão os medicamentos.")
+          escreva("\nAbaixo os dados na NF:")
+          escreva("\nCPF: ",cpf)
+          escreva("\nForma de pagamento: Dinheiro.")
+          escreva("\nValor total: xxx.")
+        } 
+          senao se(pagamento == "3") {
+          escreva("\Aqui estão os medicamentos.")
+          escreva("\nAbaixo os dados na NF:")
+          escreva("\nCPF: ",cpf)
+          escreva("\nForma de pagamento: Outros.")
+          escreva("\nValor total: xxx.")
+        }
+      }senao {
+        escreva("Qual seria a forma de pagamento? (1) Cartão,  (2) Dinheiro, (3) Outros: ")
+        leia(pagamento)
+        se(pagamento == "1") {
+          escreva("\Aqui estão os medicamentos.")
+          escreva("\nAbaixo os dados na NF:")
+          escreva("\nForma de pagamento: Cartão.")
+          escreva("\nValor total: xxx.")
+        } 
+          senao se (pagamento == "2") {
+          escreva("\Aqui estão os medicamentos.")
+          escreva("\nAbaixo os dados na NF:")
+          escreva("\nForma de pagamento: Dinheiro.")
+          escreva("\nValor total: xxx.")
+        } 
+          senao se(pagamento == "3") {
+          escreva("\Aqui estão os medicamentos.")
+          escreva("\nAbaixo os dados na NF:")
+          escreva("\nForma de pagamento: Outros.")
+          escreva("\nValor total: xxx.")
+        }
+      }
+
+        // INFORMA AO CLIETE QUE COMO SE TRATA DE REMÉDIO CONTROLADO
+        // NÃO PODE DAR ATENDIMENTO SEM O CPF OU CÓPIA DA RECEITA
+
+      } senao {
+        escreva("\nInfelizmente não posso prosseguir sem o CPF ou sem a cópia da receita!")
+        escreva("\nAtendimento encerrado!")
+        retorne
+      } 
+
+      //VERIFICA SE HÁ REMÉDIOS NA PRATELEIRA (REMÉDIOS SEM RECEITA CONTROLADA)
+
+    } senao {
+      escreva("Há remédios na prateleira? Digite (S) para sim e (N) para não: ")
+      leia(verifica_remedio)
+
+      // VERIFICA SE TEM TODOSOS MEDICAMENTOS EM ESTOQUE
+
+      se(verifica_remedio == "S" ou verifica_remedio == "s") {
+        escreva("Temos todos os medicamentos da receita? Digite (S) para sim e (N) para não: ")
+        leia(verifica_estoque)
+
+        se(verifica_estoque == "S" ou verifica_estoque == "s"){
+          escreva("\nAqui estão as instruções de uso.")
+          escreva("\nFavor realizar o pagamento do caixa!")
+        }senao {
+
+          //VERIFICA SE O CLIENTE ACEITA COMPRAR PARCIALMENTE OS REMÉDIOS DA RECEITA
+
+          escreva("Temos os medicamentos em estoque? Digite (1) para todos, (2) para parcial ou (3) para nenhum: ")
+          leia(verifica_parcial)
+
+          se(verifica_parcial == "1") {
+            escreva("\nAqui estão as instruções de uso.")
+            escreva("\nFavor realizar o pagamento do caixa!")            
+          }senao se(verifica_parcial == "2") {
+            escreva("Aceita levar apenas parte dos medicamentos? Digite (S) para sim e (N) para não: ")
+            leia(verifica_compra)
+
+            se(verifica_compra == "S" ou verifica_compra == "s") {
+              escreva("\nAqui estão as instruções de uso.")
+              escreva("\nFavor realizar o pagamento do caixa!")                
+            }senao {
+              escreva("\nInfelizmente não posso prosseguir sem o CPF ou sem a cópia da receita!")
+              escreva("\nAtendimento encerrado!")
+              retorne            
+            }
+          }senao se(verifica_parcial == "3") {
+            escreva("\nInfelizmente não posso prosseguir sem o CPF ou sem a cópia da receita!")
+            escreva("\nAtendimento encerrado!")
+            retorne
+          }
+        }
+      }     // VERIFICA SE DESEJA CPF EM NOTA
+
+      escreva("Deseja coloca o CPF em nota? Digite (S) para sim e (N) para não: ")
+      leia(verifica_nota)
+      se(verifica_nota == "S" ou verifica_nota == "s") {
+
+        //VERIFICA A FORMA DE PAGAMENTO E IMPRIME A NOTA
+
+        escreva("Qual seria a forma de pagamento? (1) Cartão,  (2) Dinheiro, (3) Outros: ")
+        leia(pagamento)
+        se(pagamento == "1") {
+          escreva("\Aqui estão os medicamentos.")
+          escreva("\nAbaixo os dados na NF:")
+          escreva("\nCPF: ",cpf)
+          escreva("\nForma de pagamento: Cartão.")
+          escreva("\nValor total: xxx.")
+        } 
+          senao se (pagamento == "2") {
+          escreva("\Aqui estão os medicamentos.")
+          escreva("\nAbaixo os dados na NF:")
+          escreva("\nCPF: ",cpf)
+          escreva("\nForma de pagamento: Dinheiro.")
+          escreva("\nValor total: xxx.")
+        } 
+          senao se(pagamento == "3") {
+          escreva("\Aqui estão os medicamentos.")
+          escreva("\nAbaixo os dados na NF:")
+          escreva("\nCPF: ",cpf)
+          escreva("\nForma de pagamento: Outros.")
+          escreva("\nValor total: xxx.")
+        }
+      }senao {
+        escreva("Qual seria a forma de pagamento? (1) Cartão,  (2) Dinheiro, (3) Outros: ")
+        leia(pagamento)
+        se(pagamento == "1") {
+          escreva("\Aqui estão os medicamentos.")
+          escreva("\nAbaixo os dados na NF:")
+          escreva("\nForma de pagamento: Cartão.")
+          escreva("\nValor total: xxx.")
+        } 
+          senao se (pagamento == "2") {
+          escreva("\Aqui estão os medicamentos.")
+          escreva("\nAbaixo os dados na NF:")
+          escreva("\nForma de pagamento: Dinheiro.")
+          escreva("\nValor total: xxx.")
+        } 
+          senao se(pagamento == "3") {
+          escreva("\Aqui estão os medicamentos.")
+          escreva("\nAbaixo os dados na NF:")
+          escreva("\nForma de pagamento: Outros.")
+          escreva("\nValor total: xxx.")
+        }
+      }
+    }
+  }
+}
 

@@ -1,1 +1,57 @@
+programa {
+
+  inclua biblioteca Util --> u
+
+  funcao inicio() {
+    inteiro n1, n2, n3
+    cadeia validador
+
+    // Iniciando e coletando os dados
+    escreva("Programa de contagem progressiva!")
+    escreva("\nDigite o número que deseja iniciar a contagem: ")
+    leia(n1)
+
+    escreva("Digite o número que deseja terminar a contagem: ")
+    leia(n2)
+
+    // Estrutura de controle
+    // Aqui iremos garantir que o usuário entre com o dado correto sem quebrar o programa
+    // O usuário define se ele que ou não dizer o passo que o contador irá dar
+    
+    faca {
+      escreva("\nDeseja definir o valor que será somado ao contator de controle?")
+      escreva("\nDigite (S) para sim ou (N) para não: ")
+      leia(validador)
+
+      se(validador != "S" e validador != "s" e validador != "N" e validador != "n") {
+        escreva("Opção inválida. Tente novamente!\n")
+      }
+    } enquanto(validador != "S" e validador != "s" e validador != "N" e validador != "n")
+
+
+    se(validador == "S" ou validador =="s") {
+
+      escreva("\nDigite o valor do incremento: ")      
+      leia(n3)
+      escreva("\nContagem: ")
+      enquanto(n1 <= n2) {  
+    
+        se (n1 <= n2){
+          escreva(n1," ")
+          n1 += n3
+
+        u.aguarde(300)
+        } 
+      } 
+    } senao se(validador == "N" ou validador == "n") {
+        escreva("\nContagem: ")
+        enquanto(n1 <= n2) {
+    
+          escreva(n1, " ")
+          n1 = n1 + 1
+          u.aguarde(300)
+      }
+    }
+  }
+}
 

@@ -30,9 +30,9 @@ Para rodar este programa, você precisará do:
   -  Portugol Studio instalado em sua máquina.
 
 ## Exemplo de Uso
-Plaintext
-Digite o número que deseja iniciar a contagem: 2
-Digite o número que deseja terminar a contagem: 10
+
+  -  Digite o número que deseja iniciar a contagem: 2
+  -  Digite o número que deseja terminar a contagem: 10
 
 Deseja definir o valor que será somado ao contator de controle?
 Digite (S) para sim ou (N) para não: S
